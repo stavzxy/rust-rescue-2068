@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bxysqqbygvmg"]
+
+[ext_resource type="PackedScene" uid="uid://c818luqwox315" path="res://ST/GAETHON/enemy_spawner.tscn" id="1_4xydd"]
+[ext_resource type="PackedScene" uid="uid://dppqe46rudmnd" path="res://ST/Player/player.tscn" id="1_o37c7"]
+[ext_resource type="Texture2D" uid="uid://dey81053bahah" path="res://ST/World/Tiles.png" id="3_mwery"]
+
+[node name="Main" type="Node" unique_id=1300031881]
+
+[node name="Player" parent="." unique_id=535109105 instance=ExtResource("1_o37c7")]
+z_index = 1
+
+[node name="EnemySpawner" parent="." unique_id=609419588 instance=ExtResource("1_4xydd")]
+z_index = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2010392690]
+z_index = 1
+position = Vector2(109, -4)
+
+[node name="Tiles" type="Sprite2D" parent="." unique_id=593329296]
+position = Vector2(52, 395)
+texture = ExtResource("3_mwery")

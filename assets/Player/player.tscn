@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dppqe46rudmnd"]
+
+[ext_resource type="Script" uid="uid://jv88nltyocw4" path="res://assets/Player/player.gd" id="1_hvr4l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xg5j1"]
+radius = 8.0
+height = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3oh1y"]
+radius = 25.0
+
+[node name="Player" type="CharacterBody2D" unique_id=535109105]
+script = ExtResource("1_hvr4l")
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=454809206]
+shape = SubResource("CapsuleShape2D_xg5j1")
+
+[node name="SlashArea" type="Area2D" parent="." unique_id=1113882796]
+
+[node name="SlashCollision" type="CollisionShape2D" parent="SlashArea" unique_id=759323541]
+position = Vector2(20, 0)
+shape = SubResource("CircleShape2D_3oh1y")
+disabled = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=180707800]

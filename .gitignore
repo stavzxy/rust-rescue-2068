@@ -1,0 +1,27 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+# Godot generated files
+.godot/
+
+# C# build artifacts
+.mono/
+bin/
+obj/
+
+# IDE files
+.vs/
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+
+# Build output
+builds/
+exports/
+
+# Secrets
+.env
+.env.*
+!.env.example

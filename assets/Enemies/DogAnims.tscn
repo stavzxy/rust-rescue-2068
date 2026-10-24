@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bvl8o66kw34n3"]
+
+[ext_resource type="Script" uid="uid://jrlfx2yknfp3" path="res://assets/Enemies/dog_anims.gd" id="1_1w86f"]
+[ext_resource type="Texture2D" uid="uid://cwme8oacaolc" path="res://assets/Enemies/new_atlas_texture.tres" id="1_g1wvp"]
+[ext_resource type="Texture2D" uid="uid://ciakmgydu505v" path="res://assets/Enemies/rundog.tres" id="2_1w86f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w0xes"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g1wvp")
+}],
+"loop": 0,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g1wvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1w86f")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c428w"]
+size = Vector2(26, 50)
+
+[node name="Dog" type="CharacterBody2D" unique_id=90675063]
+script = ExtResource("1_1w86f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1713760901]
+position = Vector2(0, 3.637979e-12)
+scale = Vector2(1.5859375, 1.3125)
+sprite_frames = SubResource("SpriteFrames_w0xes")
+animation = &"run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=514762728]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_c428w")
+
+[node name="EntranceTimer" type="Timer" parent="." unique_id=1963647448]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="EntranceTimer" to="." method="_on_entrance_timer_timeout"]

@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://boin1xrmaew2n"]
+
+[ext_resource type="Script" path="res://UI/ending_choice.gd" id="1_choice"]
+
+[node name="EndingChoice" type="CanvasLayer"]
+process_mode = 3
+layer = 100
+script = ExtResource("1_choice")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="ChoicePanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -125.0
+offset_right = 260.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ChoicePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="PromptLabel" type="Label" parent="ChoicePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.4, 0.2, 1)
+theme_override_font_sizes/font_size = 18
+text = "NO FOOD REMAINS. SACRIFICE REQUIRED."
+horizontal_alignment = 1
+
+[node name="EatWifeButton" type="Button" parent="ChoicePanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_neighbor_top = NodePath("../EatenByWifeButton")
+focus_neighbor_bottom = NodePath("../EatenByWifeButton")
+focus_next = NodePath("../EatenByWifeButton")
+focus_previous = NodePath("../EatenByWifeButton")
+text = "[ EAT YOUR WIFE TO SURVIVE ]"
+
+[node name="EatenByWifeButton" type="Button" parent="ChoicePanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_neighbor_top = NodePath("../EatWifeButton")
+focus_neighbor_bottom = NodePath("../EatWifeButton")
+focus_next = NodePath("../EatWifeButton")
+focus_previous = NodePath("../EatWifeButton")
+text = "[ LET YOUR WIFE EAT YOU ]"

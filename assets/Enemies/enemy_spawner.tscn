@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c818luqwox315"]
+
+[ext_resource type="Script" uid="uid://bq6ra4fmobrc1" path="res://assets/Enemies/enemy_spawner.gd" id="1_nn5xm"]
+
+[node name="EnemySpawner" type="Node2D" unique_id=609419588]
+script = ExtResource("1_nn5xm")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1165512046]
+position = Vector2(100, -20)
+
+[node name="Marker2D2" type="Marker2D" parent="." unique_id=612468490]
+position = Vector2(200, -20)
+
+[node name="EntranceTimer" type="Timer" parent="." unique_id=1875674524]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
